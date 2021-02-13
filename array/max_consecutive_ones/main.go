@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func findMaxConsecutiveOnes(nums []int) int {
 	max, cur := 0, 0
