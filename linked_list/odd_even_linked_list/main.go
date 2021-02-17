@@ -69,6 +69,6 @@ func main() {
 	nodeC2 := &ListNode{1, nodeC3}
 	nodeC := &ListNode{2, nodeC2}
 
-	rc := oddEvenList2(nodeC)
+	rc := oddEvenList(nodeC)
 	PrintAll(rc)
 }
