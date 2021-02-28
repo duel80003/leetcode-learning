@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func generate(numRows int) [][]int {
-	r := make([][]int, numRows)
+func getRow(rowIndex int) []int {
+	r := make([][]int, rowIndex+1)
 	max := 2
-	for i := 0; i < numRows; i++ {
+	for i := 0; i < rowIndex+1; i++ {
 		arr := make([]int, i+1)
 		arr[0] = 1
 		arr[len(arr)-1] = 1
@@ -20,11 +20,11 @@ func generate(numRows int) [][]int {
 				arr[length-j] = c
 				max = arr[mid] + arr[mid-1]
 			}
-			// fmt.Println(max)
 		}
 	}
-	return r
+	return r[len(r)-1]
 }
+
 func main() {
-	fmt.Println(generate(8))
+	fmt.Println(getRow(3))
 }
