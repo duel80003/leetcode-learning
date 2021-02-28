@@ -9,7 +9,6 @@ func reverseString(s []byte) {
 	end := len(s) - 1
 	mid := len(s) / 2
 	for i := 0; i < mid; i++ {
-		fmt.Println("aaa", s[start], s[end])
 		s[start], s[end] = s[end], s[start]
 		start++
 		end--
@@ -26,7 +25,7 @@ func main() {
 	c2 := []byte{}
 	reverseString(c2)
 
-	// ""
+	// "!olleh"
 	c3 := []byte{'h', 'e', 'l', 'l', 'o', '!'}
 	reverseString(c3)
 
