@@ -30,11 +30,26 @@ func preorderTraversal(root *TreeNode) []int {
 	return r
 }
 
+func preorderTraversalWithRecursive(root *TreeNode) []int {
+	r := []int{}
+	var recursive func(node *TreeNode)
+	recursive = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		r = append(r, node.Val)
+		recursive(node.Left)
+		recursive(node.Right)
+	}
+	recursive(root)
+	return r
+}
+
 func main() {
 	t1 := &TreeNode{1, nil, nil}
 	t2 := &TreeNode{2, nil, nil}
 	t3 := &TreeNode{3, nil, nil}
 	t1.Right = t2
 	t2.Left = t3
-	fmt.Println(preorderTraversal(t1))
+	fmt.Println(preorderTraversalWithRecursive(t1))
 }

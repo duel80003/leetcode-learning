@@ -29,6 +29,20 @@ func inorderTraversal(root *TreeNode) []int {
 	return result
 }
 
+func inorderTraversalWithRecursive(root *TreeNode) []int {
+	return recursive(root)
+}
+
+func recursive(node *TreeNode) {
+	result := make([]int, 0)
+	if root == nil {
+		return result
+	}
+	result = append(recursive(root.Left), root.Val)
+	result = append(result, recursive(root.Right)...)
+	return result
+}
+
 func main() {
 
 }
